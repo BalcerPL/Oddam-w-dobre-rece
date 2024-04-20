@@ -1,0 +1,59 @@
+@import "/src/sass/settings/fonts";
+@import "/src/sass/settings/colors";
+@import "../sass/settings/mixins";
+
+.hero {
+  position: relative;
+  height: 963px;
+  font-size: 1rem;
+
+  &__img {
+    background-image: url("../assets/Home-Hero-Image.jpg");
+    display: inline-block;
+    position: absolute;
+    width: 900px;
+    height: 961px;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position: center right;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 310px;
+    left: 900px;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    padding: 50px;
+
+    &__img {
+      @include line;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-family: $font-alt;
+      margin: 0;
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
+
+    span {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  }
+}
+
+.heroBTN {
+  @include BTN;
+}

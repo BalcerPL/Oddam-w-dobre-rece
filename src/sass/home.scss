@@ -1,0 +1,15 @@
+@import "/src/sass/settings/fonts";
+@import "/src/sass/settings/colors";
+
+body {
+  background-color: $color-background;
+}
+
+.container {
+  margin: 125px auto;
+  height: 100%;
+  width: 1900px;
+  background-color: $color-white;
+  border: 1px solid $color-gray;
+  border-radius: 5px;
+}

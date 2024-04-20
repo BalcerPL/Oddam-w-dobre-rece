@@ -1,0 +1,18 @@
+@import "/node_modules/normalize.css/normalize.css";
+@import "/src/sass/settings/fonts";
+@import "/src/sass/settings/colors";
+
+* {
+  ul {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+body {
+  font-family: $font-base;
+  font-size: 10px !important;
+}

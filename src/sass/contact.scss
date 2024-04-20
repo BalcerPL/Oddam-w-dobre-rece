@@ -1,0 +1,136 @@
+@import "../sass/settings/colors";
+@import "../sass/settings/fonts";
+@import "../sass/settings/mixins";
+
+//#region PLACEHOLDER STYLES
+.contact__main__inputs > div:last-child p {
+  margin-top: 50px;
+}
+
+/* Styl dla tekstu placeholdera w elemencie input */
+input::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder { /* Dla przeglądarek opartych na silniku WebKit */
+  color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
+}
+
+input:-moz-placeholder, 
+textarea:-moz-placeholder { /* Dla przeglądarek opartych na silniku Gecko */
+  color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
+}
+
+input::-moz-placeholder, 
+textarea::-moz-placeholder { /* Dla przeglądarek opartych na silniku Gecko */
+  color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
+}
+
+input:-ms-input-placeholder, 
+textarea:-ms-input-placeholder { /* Dla przeglądarek opartych na silniku Edge/IE */
+   color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
+}
+//#endregion
+
+
+.contact {
+  font-family: $font-alt;
+  &__main {
+    display: flex;
+    height: 965px;
+    
+    &__leftSide {
+      width: 50%;
+      background-image: url("../assets/Background-Contact-Form.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left;
+      background-color: white;
+      opacity: 0.2;
+    }
+    
+    &__rightSide {
+      margin-top: 150px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      h2 {
+        font-size: 2.5rem;
+      }
+      
+      p {
+        font-size: 1.3rem;
+      }
+      
+      .line {
+        margin-top: 20px;
+        @include line;
+        margin-bottom: 20px;
+      }
+    }
+    
+    &__inputs {
+      div:nth-of-type(1) {
+        display: flex;
+        justify-content: center;
+        div {
+          display: flex;
+          flex-direction: column;
+        }
+        div:last-of-type {
+          display: flex;
+          margin-left: 50px;
+        }
+      }
+      
+      input {
+        font-size: 1.2rem;
+        padding: 10px;
+        width: 100%;
+        border: 2px solid transparent;
+        border-bottom: 2px solid $color-gray;
+        
+      }
+      
+      .textarea {
+        height: 130px;
+        width: 103%;
+        font-size: 1.3rem;
+        text-align: justify;
+        border: 2px solid transparent;
+        border-bottom: 2px solid $color-gray;
+        resize: none;
+      }
+    }
+  }
+  
+  &__footer {
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    p {
+      font-size: 1.5rem;
+      font-family: $font-alt;
+      margin-right: auto;
+      margin-left: 800px;
+    }
+    img {
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+    }
+  }
+  &__BTN {
+    padding: 20px 50px;
+    margin-left: auto;
+    margin-right: 146px;
+    margin-top: 20px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid $color-gray;
+  }
+}
+
+

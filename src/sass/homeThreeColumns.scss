@@ -1,0 +1,36 @@
+@import "/src/sass/settings/fonts";
+@import "/src/sass/settings/colors";
+
+.homeThreeColumns {
+  height: 310px;
+  background-image: url("../assets/homeThreeColumns\ background.jpg");
+  background-repeat: repeat;
+  display: flex;
+  justify-content: space-around;
+  height: 385px;
+
+  &__column {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+
+    span {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-family: $font-alt;
+      font-weight: 400;
+    }
+
+    p {
+      width: 335px;
+      font-size: 12px;
+    }
+  }
+}

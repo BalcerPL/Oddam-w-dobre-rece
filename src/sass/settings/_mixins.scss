@@ -1,0 +1,20 @@
+@mixin line {
+  height: 35px;
+  width: 260px;
+  background-image: url("../assets/Decoration.svg");
+  background-repeat: no-repeat;
+}
+
+@mixin BTN {
+  display: inline-block;
+  width: 310px;
+  height: 112px;
+  background-color: transparent;
+  border: 1px solid $color-gray;
+  font-family: $font-alt;
+  font-size: 2rem;
+  font-weight: 100;
+  &:hover {
+    cursor: pointer;
+  }
+}
