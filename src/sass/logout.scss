@@ -2,7 +2,7 @@
 @import "../sass/settings/fonts";
 @import "../sass/settings/mixins";
 
-.loginDiv {
+.logoutDiv {
   display: flex;
   flex-direction: column;
   width: 700px;
@@ -15,35 +15,12 @@
     font-family: $font-alt;
     font-weight: 100;
     margin-top: 100px;
+    text-align: center;
   }
 
   .line {
     @include line;
     margin-top: 20px;
-  }
-
-  &__box {
-    margin-top: 50px;
-    background-color: $color-background;
-    width: 300px;
-    height: 250px;
-    font-size: 1.2rem;
-    display: flex;
-    flex-direction: column;
-    font-family: $font-alt;
-
-    p {
-      width: 80%;
-      margin-left: 30px;
-    }
-
-    input {
-      width: 80%;
-      margin: 0 auto;
-      border: 1px solid transparent;
-      border-bottom: 1px solid $color-gray;
-      background-color: $color-background;
-    }
   }
 
   &__buttons {
@@ -52,16 +29,19 @@
     width: 60%;
     margin-top: 30px;
     margin-bottom: 30px;
+
+    a {
+      margin: auto;
+    }
   }
 }
 
-.loginBTN {
+.logoutBTN {
   @include BTN;
-  font-size: 1rem;
-  width: 150px;
-  height: auto;
-  padding: 20px;
-  border: 1px solid transparent;
+  font-size: 1.5rem;
+  width: 250px;
+  height: 50px;
+
   &:focus {
     border: 1px solid $color-gray;
   }

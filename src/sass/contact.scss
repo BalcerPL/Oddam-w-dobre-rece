@@ -8,34 +8,37 @@
 }
 
 /* Styl dla tekstu placeholdera w elemencie input */
-input::-webkit-input-placeholder, 
-textarea::-webkit-input-placeholder { /* Dla przeglądarek opartych na silniku WebKit */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* Dla przeglądarek opartych na silniku WebKit */
   color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
 }
 
-input:-moz-placeholder, 
-textarea:-moz-placeholder { /* Dla przeglądarek opartych na silniku Gecko */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  /* Dla przeglądarek opartych na silniku Gecko */
   color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
 }
 
-input::-moz-placeholder, 
-textarea::-moz-placeholder { /* Dla przeglądarek opartych na silniku Gecko */
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  /* Dla przeglądarek opartych na silniku Gecko */
   color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
 }
 
-input:-ms-input-placeholder, 
-textarea:-ms-input-placeholder { /* Dla przeglądarek opartych na silniku Edge/IE */
-   color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* Dla przeglądarek opartych na silniku Edge/IE */
+  color: rgba(0, 0, 0, 0.5); /* Czarny z 50% przezroczystości */
 }
 //#endregion
-
 
 .contact {
   font-family: $font-alt;
   &__main {
     display: flex;
     height: 965px;
-    
+
     &__leftSide {
       width: 50%;
       background-image: url("../assets/Background-Contact-Form.jpg");
@@ -45,29 +48,29 @@ textarea:-ms-input-placeholder { /* Dla przeglądarek opartych na silniku Edge/I
       background-color: white;
       opacity: 0.2;
     }
-    
+
     &__rightSide {
       margin-top: 150px;
       width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      
+
       h2 {
         font-size: 2.5rem;
       }
-      
+
       p {
         font-size: 1.3rem;
       }
-      
+
       .line {
         margin-top: 20px;
         @include line;
         margin-bottom: 20px;
       }
     }
-    
+
     &__inputs {
       div:nth-of-type(1) {
         display: flex;
@@ -81,17 +84,16 @@ textarea:-ms-input-placeholder { /* Dla przeglądarek opartych na silniku Edge/I
           margin-left: 50px;
         }
       }
-      
+
       input {
         font-size: 1.2rem;
         padding: 10px;
         width: 100%;
         border: 2px solid transparent;
         border-bottom: 2px solid $color-gray;
-        
       }
-      
-      .textarea {
+
+      .textareaClass {
         height: 130px;
         width: 103%;
         font-size: 1.3rem;
@@ -102,7 +104,7 @@ textarea:-ms-input-placeholder { /* Dla przeglądarek opartych na silniku Edge/I
       }
     }
   }
-  
+
   &__footer {
     width: 92%;
     display: flex;
@@ -124,13 +126,19 @@ textarea:-ms-input-placeholder { /* Dla przeglądarek opartych na silniku Edge/I
   }
   &__BTN {
     padding: 20px 50px;
-    margin-left: auto;
-    margin-right: 146px;
     margin-top: 20px;
     font-size: 1rem;
     background-color: transparent;
     border: 1px solid $color-gray;
+    margin-left: 450px;
   }
 }
 
+.contactWarning {
+  color: red;
+  font-size: 1rem !important;
+}
 
+.borderBottomRed {
+  border-bottom: 2px solid red !important;
+}
