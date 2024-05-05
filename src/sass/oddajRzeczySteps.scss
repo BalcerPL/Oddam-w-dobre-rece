@@ -1,0 +1,45 @@
+@import "../sass/settings/colors";
+@import "../sass/settings/fonts";
+@import "../sass/settings/mixins";
+
+.oddajRzeczySteps {
+  &__header {
+    padding: 20px 100px;
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    background-color: $color-yellow;
+  }
+
+  &__main {
+    position: relative;
+    margin: 0;
+    height: 783px;
+    background-image: url("../assets/Background-Form.jpg");
+    background-repeat: no-repeat;
+    padding: 100px;
+    padding-bottom: 0;
+    p {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__BTN {
+    @include BTN;
+    height: 80px;
+    width: 150px;
+    margin-top: auto 0;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.summaryP {
+  font-size: 40px !important;
+}

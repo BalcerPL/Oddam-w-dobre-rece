@@ -12,17 +12,14 @@ import Contact from "./Contact";
 import "../sass/home.scss";
 import "../sass/main.scss";
 
-
-
-
 export default function Home() {
   return (
     <div className="container">
-      <HomeHeader/>
-      <HomeThreeColumns/>
-      <FourSimpleSteps/>
-      <AboutUs/>
-      <WhoWeHelp/>
+      <HomeHeader />
+      <HomeThreeColumns />
+      <FourSimpleSteps />
+      <AboutUs />
+      <WhoWeHelp />
       <Contact />
     </div>
   );

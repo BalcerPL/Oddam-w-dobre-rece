@@ -5,6 +5,7 @@ import { UserContext } from "../context/UserContext";
 //IMPORT COMPONENTS
 import Nav from "./Nav";
 import Contact from "./Contact";
+import OddajRzeczySteps from "./OddajRzeczySteps";
 // IMPORT SASS
 import "../sass/oddajRzeczy.scss";
 
@@ -58,7 +59,7 @@ export default function OddajRzeczy() {
             </div>
           </div>
         </div>
-
+        <OddajRzeczySteps />
         <Contact />
       </div>
     </>
