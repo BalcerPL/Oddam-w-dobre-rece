@@ -1,11 +1,8 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 
-// import { FormContext } from "../../context/FormContext";
-
 import "../../sass/step.scss";
 
 export default function Step1() {
-  // const { choice, setChoice } = useContext(FormContext);
   const { choice, setChoice } = useState("");
   const formRef = useRef(null);
 

@@ -1,23 +1,12 @@
 import React, { useState, useContext } from "react";
 
-import { CountersContext } from "../context/CountersContext";
-
 import "../sass/homeThreeColumns.scss";
 
 export default function HomeThreeColumns() {
-  const {
-    bags,
-    setBags,
-    organisations,
-    setOrganisations,
-    collections,
-    setCollections,
-  } = useContext(CountersContext);
-
   return (
     <div className="homeThreeColumns">
       <div className="homeThreeColumns__column">
-        <span className="counterDisplay">{bags}</span>
+        <span className="counterDisplay">FIXME:ADD COUNTER</span>
         <h3>Oddanych worków</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
@@ -27,7 +16,7 @@ export default function HomeThreeColumns() {
         </p>
       </div>
       <div className="homeThreeColumns__column">
-        <span className="counterDisplay">{organisations}</span>
+        <span className="counterDisplay">FIXME:ADD COUNTER</span>
         <h3>Wspartych organizacji</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
@@ -37,7 +26,7 @@ export default function HomeThreeColumns() {
         </p>
       </div>
       <div className="homeThreeColumns__column">
-        <span className="counterDisplay">{collections}</span>
+        <span className="counterDisplay">FIXME:ADD COUNTER</span>
         <h3>Zorganizowanych zbiórek</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
