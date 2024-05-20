@@ -1,34 +1,33 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
+//
 import supabase from "./supabase/supabaseClient";
 import Nav from "./Nav";
-
+//
 import "../sass/login.scss";
+//
 
 export default function Login() {
-  const { isLogged, setIsLogged } = useContext(UserContext);
+  const { isLogged, setIsLogged, userID, setUserID } = useContext(UserContext);
   const [error, setError] = useState(null);
   const [emailInput, setEmailInput] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    try {
-      const lowerCaseEmail = emailInput.toLowerCase();
-      const { user, error } = await supabase.auth.signInWithPassword({
-        email: lowerCaseEmail,
-        password,
-      });
+    const lowercaseEmail = emailInput.toLowerCase();
 
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: lowercaseEmail,
+        password: password,
+      });
       if (error) {
-        setError("Nie udało się zalogować. Spróbuj ponownie.");
+        setError("Wystąpił błąd podczas logowania. Spróbuj ponownie.");
       } else {
         setIsLogged(true);
-
-        setTimeout(() => {
-          navigate("/");
-        }, 2000);
+        setUserID(data.user.id);
       }
     } catch (error) {
       setError("Wystąpił błąd podczas logowania. Spróbuj ponownie.");
@@ -40,6 +39,15 @@ export default function Login() {
       handleLogin();
     }
   };
+
+  useEffect(() => {
+    if (isLogged) {
+      const timer = setTimeout(() => {
+        navigate("/");
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [isLogged, navigate]);
 
   return (
     <>

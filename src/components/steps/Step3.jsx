@@ -1,20 +1,21 @@
-import React, { useState } from "react";
-
+import React, { useContext, useEffect } from "react";
+//
 import "../../sass/step.scss";
-
+//
+import { GlobalContext } from "../../context/GlobalContext";
+//
 export default function Step3() {
-  const [localisation, setLocalisation] = useState("");
-  const [optionalOrganisation, setOptionalOrganisation] = useState("");
-  const [helpGroups, setHelpGroups] = useState({
-    dzieciom: false,
-    samotnymMatkom: false,
-    bezdomnym: false,
-    niepelnosprawnym: false,
-    osobomStarszym: false,
-  });
+  const {
+    localization,
+    setLocalization,
+    helpGroups,
+    setHelpGroups,
+    exactOrganization,
+    setExactOrganization,
+  } = useContext(GlobalContext);
 
   const handleCitySelect = (event) => {
-    setLocalisation(event.target.value);
+    setLocalization(event.target.value);
   };
 
   const handleCheckboxChange = (groupName) => {
@@ -29,7 +30,7 @@ export default function Step3() {
       <div className="stepsForm">
         <h2>Lokalizacja:</h2>
         <select className="stepSelect" onChange={handleCitySelect}>
-          <option value="">- miasto -</option>
+          <option value="">{localization ? localization : "- miasto -"}</option>
           <option value="Poznań">Poznań</option>
           <option value="Warszawa">Warszawa</option>
           <option value="Kraków">Kraków</option>
@@ -113,8 +114,8 @@ export default function Step3() {
         <h3>Wpisz nazwę konkretnej organizacji (opcjonalne)</h3>
         <input
           type="text"
-          value={optionalOrganisation}
-          onChange={(event) => setOptionalOrganisation(event.target.value)}
+          value={exactOrganization}
+          onChange={(event) => setExactOrganization(event.target.value)}
         ></input>
       </div>
     </>

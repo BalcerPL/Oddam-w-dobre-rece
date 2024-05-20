@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
-
+import React, { useRef, useEffect, useContext } from "react";
+//
+import { GlobalContext } from "../../context/GlobalContext";
+//
 import "../../sass/step.scss";
 
 export default function Step1() {
-  const { choice, setChoice } = useState("");
+  const { choice, setChoice } = useContext(GlobalContext);
   const formRef = useRef(null);
 
   const handleRadioChange = (event) => {

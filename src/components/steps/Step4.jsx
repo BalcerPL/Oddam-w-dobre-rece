@@ -1,17 +1,11 @@
-import React, { useState } from "react";
-
+import React, { useContext } from "react";
+//
+import { GlobalContext } from "../../context/GlobalContext";
+//
 import "../../sass/step.scss";
-
+//
 export default function Step4() {
-  const [formData, setFormData] = useState({
-    street: "",
-    city: "",
-    postCode: "",
-    phone: "",
-    date: "",
-    time: "",
-    notes: "",
-  });
+  const { formData, setFormData } = useContext(GlobalContext);
 
   const handleChange = (event) => {
     const { name, value } = event.target;

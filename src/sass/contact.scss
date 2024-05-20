@@ -51,8 +51,9 @@ textarea:-ms-input-placeholder {
 
     &__rightSide {
       margin-top: 150px;
-      width: 48%;
+      width: 45%;
       display: flex;
+      padding: 20px;
       flex-direction: column;
       align-items: center;
 
@@ -95,7 +96,7 @@ textarea:-ms-input-placeholder {
 
       .textareaClass {
         height: 130px;
-        width: 103%;
+        width: 99%;
         font-size: 1.3rem;
         text-align: justify;
         border: 2px solid transparent;

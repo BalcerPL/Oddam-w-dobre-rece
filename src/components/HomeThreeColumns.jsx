@@ -1,12 +1,15 @@
-import React, { useState, useContext } from "react";
-
+import React, { useContext } from "react";
+//
+import { GlobalContext } from "../context/GlobalContext";
+//
 import "../sass/homeThreeColumns.scss";
-
+// MAIN
 export default function HomeThreeColumns() {
+  const { bags, organizations, localCollections } = useContext(GlobalContext);
   return (
     <div className="homeThreeColumns">
       <div className="homeThreeColumns__column">
-        <span className="counterDisplay">FIXME:ADD COUNTER</span>
+        <span className="counterDisplay">{bags}</span>
         <h3>Oddanych worków</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque
@@ -16,7 +19,7 @@ export default function HomeThreeColumns() {
         </p>
       </div>
       <div className="homeThreeColumns__column">
-        <span className="counterDisplay">FIXME:ADD COUNTER</span>
+        <span className="counterDisplay">{organizations}</span>
         <h3>Wspartych organizacji</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
@@ -26,7 +29,7 @@ export default function HomeThreeColumns() {
         </p>
       </div>
       <div className="homeThreeColumns__column">
-        <span className="counterDisplay">FIXME:ADD COUNTER</span>
+        <span className="counterDisplay">{localCollections}</span>
         <h3>Zorganizowanych zbiórek</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.

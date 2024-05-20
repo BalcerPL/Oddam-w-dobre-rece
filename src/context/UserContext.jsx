@@ -6,7 +6,9 @@ export const UserContextProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [userRepeatedPassword, setUserRepeatedPassword] = useState("");
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
+
+  const [userID, setUserID] = useState(null);
 
   const value = {
     userEmail,
@@ -17,6 +19,8 @@ export const UserContextProvider = ({ children }) => {
     setUserRepeatedPassword,
     isLogged,
     setIsLogged,
+    userID,
+    setUserID,
   };
 
   return (

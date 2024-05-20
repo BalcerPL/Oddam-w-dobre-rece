@@ -1,0 +1,50 @@
+.stepSummary {
+  h2 {
+    font-size: 1.5rem;
+  }
+  &__top {
+    div {
+      display: flex;
+      margin-top: 10px;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  .firstSpan {
+    height: 50px;
+    width: 50px;
+    background-image: url(../assets/Icon-1.svg);
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+  }
+  .secondSpan {
+    height: 50px;
+    width: 50px;
+    background-image: url(../assets/Icon-4.svg);
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .stepSummaryMain {
+    display: flex;
+    p {
+      font-size: 30px;
+    }
+    gap: 50px;
+    margin-top: 50px;
+    &__left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    &__right {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+      gap: 20px;
+    }
+  }
+}

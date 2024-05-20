@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useContext } from "react";
+//
+import { GlobalContext } from "../../context/GlobalContext";
+//
 import "../../sass/step.scss";
 
 export default function Step2() {
-  const [bags, setBags] = useState(0);
+  const { bags, setBags } = useContext(GlobalContext);
 
   const handleSelect = (event) => {
     setBags(event.target.value);
@@ -16,7 +18,7 @@ export default function Step2() {
         <p>
           Liczba 60l worków:
           <select className="stepSelect" onChange={handleSelect}>
-            <option>- wybierz -</option>
+            <option>{bags > 0 ? bags : "- wybierz -"}</option>
             <option className="option" value="1">
               1
             </option>

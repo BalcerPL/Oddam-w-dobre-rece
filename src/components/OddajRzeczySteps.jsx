@@ -1,5 +1,10 @@
 //IMPORT REACT STUFF
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+//IMPORT SUPABASE
+import supabase from "./supabase/supabaseClient";
+//IMPORT CONTEXT
+import { GlobalContext } from "../context/GlobalContext";
+import { UserContext } from "../context/UserContext";
 //IMPORT COMPONENTS
 import Step1 from "./steps/Step1";
 import Step2 from "./steps/Step2";
@@ -12,6 +17,20 @@ import "../sass/oddajRzeczySteps.scss";
 export default function OddajRzeczySteps() {
   const [step, setStep] = useState(1);
 
+  const {
+    bags,
+    organizations,
+    localCollections,
+    choice,
+    localization,
+    whoYouWantToHelp,
+    exactOrganization,
+    helpGroups,
+    formData,
+  } = useContext(GlobalContext);
+
+  const { userID } = useContext(UserContext);
+
   const stepsInfo = {
     step1p:
       "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji wwyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądz celu ich pomocy.",
@@ -21,6 +40,38 @@ export default function OddajRzeczySteps() {
       "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądz celu ich pomocy.",
     step4p: "Podaj adres oraz termin odbioru rzeczy",
     step5p: "Podsumowanie Twojej Darowizny",
+  };
+
+  const sendToSupabase = async () => {
+    const { data, error } = await supabase.from("submissions").insert([
+      {
+        user_id: userID,
+        bags: bags,
+        organizations: organizations,
+        localCollections: localCollections,
+        choice: choice,
+        localization: localization,
+        whoYouWantToHelp: whoYouWantToHelp,
+        exactOrganization: exactOrganization,
+        samotnymMatkom: helpGroups.samotnymMatkom,
+        bezdomnym: helpGroups.bezdomnym,
+        niepelnosprawnym: helpGroups.niepelnosprawnym,
+        osobomStarszym: helpGroups.osobomStarszym,
+        city: formData.city,
+        postCode: formData.postCode,
+        street: formData.street,
+        phone: formData.phone,
+        date: formData.date,
+        time: formData.time,
+        notes: formData.notes,
+      },
+    ]);
+
+    if (error) {
+      console.error("Error: ", error);
+    } else {
+      console.log("Data submitted successfully: ");
+    }
   };
 
   return (
@@ -63,10 +114,12 @@ export default function OddajRzeczySteps() {
               onClick={() => {
                 if (step < 5) {
                   setStep(step + 1);
+                } else if (step === 5) {
+                  sendToSupabase();
                 }
               }}
             >
-              Dalej
+              {step < 5 ? "Dalej" : "Potwierdzam"}
             </button>
           </div>
         </div>

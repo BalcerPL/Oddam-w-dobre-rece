@@ -31,7 +31,8 @@
   &__BTN {
     @include BTN;
     height: 80px;
-    width: 150px;
+    width: 250px;
+    padding: 10px;
     margin-top: auto 0;
   }
 }

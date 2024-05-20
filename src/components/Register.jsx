@@ -73,6 +73,10 @@ export default function Register() {
     }
   };
 
+  const goToLogin = () => {
+    navigate("/Login");
+  };
+
   return (
     <div className="container">
       <Nav />
@@ -116,7 +120,7 @@ export default function Register() {
             Załóż konto
           </button>
 
-          <button className="registerBTN" onClick={navigate("./Login")}>
+          <button className="registerBTN" onClick={goToLogin}>
             Zaloguj się
           </button>
         </div>
